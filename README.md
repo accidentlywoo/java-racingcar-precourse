@@ -18,7 +18,7 @@
 - 실행 클라이언트 Application Class
     : 출력용 main 메소드가있는 클래스
 
--   게임 구현체 RacingCarGame Class
+-   게임 실행 RacingCarGame Class
    
 -  UI - RacingCarGame Class
     : 게임을 실행시키는 메소드가 있는 클래스
@@ -26,10 +26,10 @@
 -  UI - ConsoleInputOutController Class
    : 콘솔 입출력 컨트롤러
    
--  UI - Message Cass
+-  UI - ConsoleInputOutMessage Cass
     : 메세지 리소스
    
--  UI - RacingVew Class
+-  UI - RacingDrawing Class
     : 자동차 경주 출력
    
 -  Domain - Car Class
