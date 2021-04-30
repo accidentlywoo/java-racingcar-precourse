@@ -15,27 +15,32 @@
 - 자동차 경주 게임을 완료한 후 누가 우승했는지를 알려준다. ***우승자는 한 명 이상***일 수 있다.
 
 ## 기능 목록
-1. UI - Client Class
+- 실행 클라이언트 Application Class
     : 출력용 main 메소드가있는 클래스
+
+-   게임 구현체 RacingCarGame Class
    
-2. UI - RacingCar Class
+-  UI - RacingCarGame Class
     : 게임을 실행시키는 메소드가 있는 클래스
+
+-  UI - ConsoleInputOutController Class
+   : 콘솔 입출력 컨트롤러
    
-3. UI - Message Class
-    : 메세지 입출력
+-  UI - Message Cass
+    : 메세지 리소스
    
-4. UI - RacingVew Class
+-  UI - RacingVew Class
     : 자동차 경주 출력
    
-5. Domain - Car Class
+-  Domain - Car Class
     : 자동차 클래스. ***이름***, ***전진 칸 수***
    
-6. Domain - RaceCarGroup Class
+- Domain - RaceCarGroup Class
     : 레이싱 그룹. 레이싱 시도 ***횟수***, ***n대의 자동차***
    
-7. Domain - RaceGenerator Class
+- Domain - RaceGenerator Class
     : 랜덤수로 전진, 멈춤 쌓쌓 메소드
 
-8. Generator - RandomNumberGenerator Class
+- Generator - RandomNumberGenerator Class
     : 랜덤수 생성
 
