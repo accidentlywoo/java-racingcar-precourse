@@ -16,6 +16,8 @@ public class ConsoleInputOutController {
 
 			boolean carNameCheck = carNameCheck(scanner.nextLine().trim());
 
+			System.out.println(ConsoleInputOutMessage.ASK_RACING_COUNT);
+
 			flag = racingCount(scanner.nextLine().trim(), carNameCheck);
 		}
 	}
@@ -23,8 +25,11 @@ public class ConsoleInputOutController {
 	private boolean carNameCheck(String inputCarNames){
 		try{
 			new CarGroupGenerator(inputCarNames);
+
 		}catch (IllegalArgumentException e){
+
 			System.out.println(e);
+
 			return false;
 		}
 		return true;
@@ -32,17 +37,31 @@ public class ConsoleInputOutController {
 
 	private boolean racingCount(String inputCarNames, boolean flag){
 		if(!flag){
-			return false;
+			return true;
 		}
 
-		System.out.println(ConsoleInputOutMessage.ASK_RACING_COUNT);
+		countCheck(inputCarNames);
 
-		new RaceGenerator(inputCarNames);
+		return flag;
+	}
 
+	private void countCheck(String inputCount){
+		try{
+			new RaceGenerator(inputCount);
+
+		}catch (IllegalArgumentException e){
+
+			System.out.println(e);
+		}
+
+		printView();
+	}
+
+	private void printView(){
 		System.out.println(ConsoleInputOutMessage.RACING_RESULT_MESSAGE);
+
 		// TODO 레이싱 뷰 뿌리기
 		System.out.println(ConsoleInputOutMessage.WINNER_SURFIX_MESSAGE);
 
-		return true;
 	}
 }
