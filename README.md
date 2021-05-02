@@ -29,16 +29,22 @@
    
 -  UI 자동차 경주 출력
     - 이름과 전진상태 그리는 클래스
-   
+    
+- Validation 입력값 제어
+    - 이름 길이 제한 : 5글자 이하
+    - 이동 횟수 입력값 : 숫자값
+  
 -  Domain 자동차
     - Car class 자동차의 ***이름***, ***전진 칸 수***
    
 - Domain 레이싱 그룹
     - 레이싱 그룹 레이싱 시도 ***횟수***, ***n대의 자동차***
    
-- Domain - RaceGenerator Class
+- Domain 전진 여부생성
     - 랜덤수로 전진 / 멈춤 계산
 
 - Generator - RandomNumberGenerator Class
     - 랜덤수 생성
+    
+아... 어떻게 그려야될까..
 
