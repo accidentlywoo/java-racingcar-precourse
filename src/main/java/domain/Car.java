@@ -11,4 +11,12 @@ public class Car {
 	public void plusRunCount(Integer go) {
 		this.runCount += go;
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public Integer getRunCount() {
+		return runCount;
+	}
 }
