@@ -1,33 +1,15 @@
 package generator;
 
-import domain.Car;
 import domain.CarGroup;
-import util.CarNameConstant;
-import validation.InputValidator;
 
 public class CarGroupGenerator {
-	private final int carGroupLength;
-	private final CarGroup raceCarGroup;
+  private final CarGroup carGroup;
 
-	public CarGroupGenerator(String carsString) {
-		final String[] cars = carsString.split(CarNameConstant.SPLIT_CAR_NAME);
+  public CarGroupGenerator(String[] cars) {
+    carGroup = new CarGroup(cars);
+  }
 
-		InputValidator.carNamecheck(cars);
-
-		carGroupLength = cars.length;
-
-		raceCarGroup = new CarGroup(carGroupLength);
-
-		createCars(cars);
-	}
-
-	public void createCars(String[] cars){
-		for (int i = 0; i < carGroupLength; i++){
-			raceCarGroup.putCarInGroup(new Car(cars[i]), i);
-		}
-	}
-
-	public CarGroup getRaceCarGroup() {
-		return raceCarGroup;
-	}
+  public CarGroup getRaceCarGroup() {
+    return carGroup;
+  }
 }

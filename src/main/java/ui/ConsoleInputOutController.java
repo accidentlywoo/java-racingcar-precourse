@@ -2,6 +2,8 @@ package ui;
 
 import generator.CarGroupGenerator;
 import generator.RaceGenerator;
+import util.CarNameConstant;
+import validation.InputValidator;
 
 import java.util.Scanner;
 
@@ -25,7 +27,11 @@ public class ConsoleInputOutController {
 
   private boolean carNameCheck(String inputCarNames){
     try{
-      carGroupGenerator = new CarGroupGenerator(inputCarNames);
+      final String[] cars = inputCarNames.split(CarNameConstant.SPLIT_CAR_NAME);
+
+      InputValidator.carNamecheck(cars);
+
+      carGroupGenerator = new CarGroupGenerator(cars);
 
     }catch (IllegalArgumentException e){
 
@@ -48,7 +54,7 @@ public class ConsoleInputOutController {
 
   private void countCheck(String inputCount){
     try{
-      new RaceGenerator(inputCount, carGroupGenerator.getRaceCarGroup());
+      new RaceGenerator(InputValidator.countCheck(inputCount), carGroupGenerator.getRaceCarGroup());
 
     }catch (IllegalArgumentException e){
 

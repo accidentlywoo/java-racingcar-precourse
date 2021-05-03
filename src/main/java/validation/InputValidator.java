@@ -15,9 +15,10 @@ public class InputValidator {
     }
   }
 
-  public static void countCheck(String count){
+  public static Integer countCheck(String count){
     if(!count.matches("^[0-9]*$")){
       throw new IllegalArgumentException("숫자만 입력해주세요.");
     }
+    return Integer.valueOf(count);
   }
 }
