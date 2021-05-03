@@ -1,22 +1,22 @@
 package generator;
 
 import domain.Car;
-import domain.RaceCarGroup;
-import util.RaceConstant;
+import domain.CarGroup;
+import util.CarNameConstant;
 import validation.InputValidator;
 
 public class CarGroupGenerator {
 	private final int carGroupLength;
-	private final RaceCarGroup raceCarGroup;
+	private final CarGroup raceCarGroup;
 
 	public CarGroupGenerator(String carsString) {
-		final String[] cars = carsString.split(RaceConstant.SPLIT_CAR_NAME);
+		final String[] cars = carsString.split(CarNameConstant.SPLIT_CAR_NAME);
 
 		InputValidator.carNamecheck(cars);
 
 		carGroupLength = cars.length;
 
-		raceCarGroup = new RaceCarGroup(carGroupLength);
+		raceCarGroup = new CarGroup(carGroupLength);
 
 		createCars(cars);
 	}
@@ -25,5 +25,9 @@ public class CarGroupGenerator {
 		for (int i = 0; i < carGroupLength; i++){
 			raceCarGroup.putCarInGroup(new Car(cars[i]), i);
 		}
+	}
+
+	public CarGroup getRaceCarGroup() {
+		return raceCarGroup;
 	}
 }
