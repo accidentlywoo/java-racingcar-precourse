@@ -14,15 +14,17 @@ public class RandomNumberGenerator {
     this.carGroup = raceCarGroup;
   }
 
-  public void gogoCar(){
+  public CarGroup gogoCar(){
     final Car[] carList = carGroup.getCars();
-    for(Car car : carList){
 
+    for(Car car : carList){
       Random random = new Random();
 
       int randomNumber = random.nextInt(MAX_RANDOM_NUMBER) + 1;
 
       car.plusRunCount(randomNumber > EDGE_NUMBER_OF_GO ? GO : STOP);
     }
+
+    return carGroup;
   }
 }
