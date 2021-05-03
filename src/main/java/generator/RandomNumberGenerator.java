@@ -15,7 +15,7 @@ public class RandomNumberGenerator {
   }
 
   public void gogoCar(){
-    final Car[] carList = carGroup.getCarList();
+    final Car[] carList = carGroup.getCars();
     for(Car car : carList){
 
       Random random = new Random();
