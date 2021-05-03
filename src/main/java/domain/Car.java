@@ -8,7 +8,7 @@ public class Car {
 		this.name = name;
 	}
 
-	public void plusRunCount() {
-		this.runCount += 1;
+	public void plusRunCount(Integer go) {
+		this.runCount += go;
 	}
 }
