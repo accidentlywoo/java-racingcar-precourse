@@ -1,12 +1,21 @@
 package generator;
 
+import domain.Car;
 import domain.CarGroup;
 
 public class CarGroupGenerator {
   private final CarGroup carGroup;
 
   public CarGroupGenerator(String[] cars) {
-    carGroup = new CarGroup(cars);
+    int carLength = cars.length;
+
+    Car[] cars1 = new Car[carLength];
+
+    for (int i = 0; i < carLength; i++){
+      cars1[i] = new Car(cars[i]);
+    }
+
+    carGroup = new CarGroup(cars1);
   }
 
   public CarGroup getRaceCarGroup() {
