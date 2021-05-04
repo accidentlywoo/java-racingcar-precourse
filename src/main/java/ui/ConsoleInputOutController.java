@@ -19,8 +19,6 @@ public class ConsoleInputOutController {
 
       boolean carNameCheck = carNameCheck(scanner.nextLine().trim());
 
-      System.out.println(ConsoleInputOutMessage.ASK_RACING_COUNT);
-
       flag = carNameCheck ? racingCount(scanner.nextLine().trim()) : carNameCheck;
     }
   }
@@ -32,6 +30,8 @@ public class ConsoleInputOutController {
       InputValidator.carNamecheck(cars);
 
       carGroupGenerator = new CarGroupGenerator(cars);
+
+      System.out.println(ConsoleInputOutMessage.ASK_RACING_COUNT);
 
     }catch (IllegalArgumentException e){
       System.out.println(e);

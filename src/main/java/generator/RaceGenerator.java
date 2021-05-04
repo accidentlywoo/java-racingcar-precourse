@@ -4,7 +4,6 @@ import domain.CarGroup;
 import domain.WinRaceCar;
 import ui.RacingDrawing;
 
-import java.lang.reflect.InaccessibleObjectException;
 import java.util.List;
 
 public class RaceGenerator {
