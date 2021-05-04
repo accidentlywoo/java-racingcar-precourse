@@ -42,8 +42,6 @@ public class ConsoleInputOutController {
   }
 
   private boolean racingCount(String inputCarNames){
-
-
     countCheck(inputCarNames);
 
     return true;

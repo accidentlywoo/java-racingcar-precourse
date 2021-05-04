@@ -26,12 +26,12 @@ class RaceGeneratorTest {
     assertThat(carGroupGenerator.getRaceCarGroup()).isNotNull();
 
     assertThat(carGroupGenerator.getRaceCarGroup().getCars())
-        .extracting("name", "runCount")
-        .contains(
-            Tuple.tuple(test1, 0),
-            Tuple.tuple(test2, 0),
-            Tuple.tuple(test3, 0)
-        );
+      .extracting("name", "runCount")
+      .contains(
+          Tuple.tuple(test1, 0),
+          Tuple.tuple(test2, 0),
+          Tuple.tuple(test3, 0)
+      );
 
     int InputCount = 10;
     // when
