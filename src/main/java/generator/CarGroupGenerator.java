@@ -12,7 +12,7 @@ public class CarGroupGenerator {
     Car[] cars1 = new Car[carLength];
 
     for (int i = 0; i < carLength; i++){
-      cars1[i] = new Car(cars[i]);
+      cars1[i] = new Car(cars[i].trim());
     }
 
     carGroup = new CarGroup(cars1);
