@@ -55,9 +55,7 @@ public class ConsoleInputOutController {
 
       System.out.println(ConsoleInputOutMessage.RACING_RESULT_MESSAGE);
 
-	  raceGenerator.run();
-
-	  System.out.println(raceGenerator.getWinner() + ConsoleInputOutMessage.WINNER_SURFIX_MESSAGE);
+	  System.out.println(raceGenerator.run() + ConsoleInputOutMessage.WINNER_SURFIX_MESSAGE);
 
     }catch (IllegalArgumentException e){
       System.out.println(e);

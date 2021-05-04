@@ -16,7 +16,7 @@ public class RaceGenerator {
     this.carGroup = carGroup;
   }
 
-  public void run() {
+  public List<String> run() {
     final RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator(carGroup);
     CarGroup cars;
 
@@ -25,9 +25,10 @@ public class RaceGenerator {
 
       new RacingDrawing(cars.getCars());
     }
+    return getWinner();
   }
 
-  public List<String> getWinner(){
+  private List<String> getWinner(){
     List<String> result = new ArrayList<>();
 
     int max = 0;
