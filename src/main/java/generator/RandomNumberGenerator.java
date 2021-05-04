@@ -14,10 +14,10 @@ public class RandomNumberGenerator {
     this.carGroup = raceCarGroup;
   }
 
-  public CarGroup gogoCar(){
+  public CarGroup gogoCar() {
     final Car[] carList = carGroup.getCars();
 
-    for(Car car : carList){
+    for (Car car : carList) {
       Random random = new Random();
 
       int randomNumber = random.nextInt(MAX_RANDOM_NUMBER) + 1;

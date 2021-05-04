@@ -22,7 +22,7 @@ public class RaceGenerator {
     final RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator(carGroup);
     CarGroup carGroup;
 
-    for (int i = 0; i < count; i ++){
+    for (Integer i = 0; i < count; i ++){
       carGroup = randomNumberGenerator.gogoCar();
 
       new RacingDrawing(carGroup.getCars());
@@ -31,8 +31,8 @@ public class RaceGenerator {
     }
   }
 
-  public List<String> getWinRaceCar(){
-    if(winRaceCar == null){
+  public List<String> getWinRaceCar() {
+    if (winRaceCar == null) {
       throw new UnsupportedOperationException(GET_WINNER_EXCEPTION_MESSAGE);
     }
 

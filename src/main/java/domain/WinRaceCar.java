@@ -10,29 +10,29 @@ public class WinRaceCar {
 		winnerSetting(carGroup);
 	}
 
-	private void winnerSetting(CarGroup carGroup){
+	private void winnerSetting(CarGroup carGroup) {
 		carNames = new ArrayList<>();
 
 		int max = 0;
 
-		for(Car car : carGroup.getCars()){
+		for (Car car : carGroup.getCars()) {
 			max = maxCompare(max, car.getRunCount());
 		}
 
-		for(Car car : carGroup.getCars()){
+		for (Car car : carGroup.getCars()) {
 			setWinnerCarNames(max, car);
 		}
 	}
 
-	private Integer maxCompare(Integer max, Integer carRunCount){
-		if(carRunCount > max){
+	private Integer maxCompare(Integer max, Integer carRunCount) {
+		if (carRunCount > max) {
 			return carRunCount;
 		}
 		return max;
 	}
 
-	private void setWinnerCarNames(Integer max, Car car){
-		if(car.getRunCount() == max){
+	private void setWinnerCarNames(Integer max, Car car) {
+		if (car.getRunCount().equals(max)) {
 			carNames.add(car.getName());
 		}
 	}

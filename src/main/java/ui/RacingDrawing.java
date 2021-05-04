@@ -7,15 +7,16 @@ public class RacingDrawing {
 
   public RacingDrawing(Car[] cars) {
     System.out.println();
-      for(Car car : cars){
+
+      for (Car car : cars){
         System.out.println(car.getName() + " : " + drawBar(car.getRunCount()));
       }
   }
 
-  private String drawBar(Integer count){
+  private String drawBar(Integer count) {
     String draw = "";
 
-    for(int i = 0; i < count; i++ ){
+    for (int i = 0; i < count; i++ ){
       draw += RUN_ONE_STEP;
     }
 

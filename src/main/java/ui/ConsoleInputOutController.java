@@ -9,12 +9,13 @@ import java.util.Scanner;
 
 public class ConsoleInputOutController {
   private final Scanner scanner = new Scanner(System.in);
+
   private CarGroupGenerator carGroupGenerator;
 
   public void run() {
     boolean flag = true;
 
-    while (flag){
+    while (flag) {
       System.out.println(ConsoleInputOutMessage.ASK_RACING_CAR_NAME);
 
       boolean carNameCheck = carNameCheck(scanner.nextLine().trim());
@@ -23,8 +24,8 @@ public class ConsoleInputOutController {
     }
   }
 
-  private boolean carNameCheck(String inputCarNames){
-    try{
+  private boolean carNameCheck(String inputCarNames) {
+    try {
       final String[] cars = inputCarNames.split(CarNameConstant.SPLIT_CAR_NAME);
 
       InputValidator.carNamecheck(cars);
@@ -33,7 +34,7 @@ public class ConsoleInputOutController {
 
       System.out.println(ConsoleInputOutMessage.ASK_RACING_COUNT);
 
-    }catch (IllegalArgumentException e){
+    } catch (IllegalArgumentException e) {
       System.out.println(e);
 
       return false;
@@ -41,14 +42,14 @@ public class ConsoleInputOutController {
     return true;
   }
 
-  private boolean racingCount(String inputCarNames){
+  private boolean racingCount(String inputCarNames) {
     countCheck(inputCarNames);
 
     return true;
   }
 
-  private void countCheck(String inputCount){
-    try{
+  private void countCheck(String inputCount) {
+    try {
       RaceGenerator raceGenerator = new RaceGenerator(InputValidator.countCheck(inputCount), carGroupGenerator.getRaceCarGroup());
 
       System.out.println(ConsoleInputOutMessage.RACING_RESULT_MESSAGE);
@@ -57,7 +58,7 @@ public class ConsoleInputOutController {
 
 	    System.out.println(raceGenerator.getWinRaceCar() + ConsoleInputOutMessage.WINNER_SURFIX_MESSAGE);
 
-    }catch (IllegalArgumentException e){
+    } catch (IllegalArgumentException e) {
       System.out.println(e);
     }
   }
