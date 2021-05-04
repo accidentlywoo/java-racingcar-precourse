@@ -1,46 +1,42 @@
 package generator;
 
-import domain.Car;
 import domain.CarGroup;
+import domain.WinRaceCar;
 import ui.RacingDrawing;
 
-import java.util.ArrayList;
+import java.lang.reflect.InaccessibleObjectException;
 import java.util.List;
 
 public class RaceGenerator {
+  private final String GET_WINNER_EXCEPTION_MESSAGE = "게임을 실행시켜야. 승리자를 구분할 수 있습니다.";
+
   private final Integer count;
   private final CarGroup carGroup;
+  private WinRaceCar winRaceCar;
 
   public RaceGenerator(Integer count, CarGroup carGroup) {
     this.count = count;
     this.carGroup = carGroup;
   }
 
-  public List<String> run() {
+  public void run() {
     final RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator(carGroup);
-    CarGroup cars;
+    CarGroup carGroup;
 
     for (int i = 0; i < count; i ++){
-      cars = randomNumberGenerator.gogoCar();
+      carGroup = randomNumberGenerator.gogoCar();
 
-      new RacingDrawing(cars.getCars());
+      new RacingDrawing(carGroup.getCars());
+
+      this.winRaceCar = new WinRaceCar(carGroup);
     }
-    return getWinner();
   }
 
-  private List<String> getWinner(){
-    List<String> result = new ArrayList<>();
-
-    int max = 0;
-
-    for(Car car : carGroup.getCars()){
-      max = car.getRunCount() > max ?
-              car.getRunCount() : max;
-
-      if (car.getRunCount() == max) {
-        result.add(car.getName());
-      }
+  public List<String> getWinRaceCar(){
+    if(winRaceCar == null){
+      throw new UnsupportedOperationException(GET_WINNER_EXCEPTION_MESSAGE);
     }
-    return result;
+
+    return this.winRaceCar.getCarNames();
   }
 }
